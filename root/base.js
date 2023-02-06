@@ -27,6 +27,7 @@ $(document).ready(function() {
             })
         
         const res = await response.json()
+        console.log(res)
         
         let locationIcon = document.querySelector('.weather-icon');
 

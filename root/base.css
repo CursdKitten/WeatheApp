@@ -35,10 +35,6 @@ h1 {
     color: white;
 }
 
-#sun-favicon {
-    filter: invert(100%) sepia(2%) saturate(240%) hue-rotate(203deg) brightness(116%) contrast(100%);
-}
-
 /* img {
     class: "mx-auto d-block";
 } */
