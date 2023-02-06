@@ -1,0 +1,45 @@
+#historical-data-table{
+    display: none;
+    background-color: white;
+    padding: 0;
+}
+
+#button-section {
+    text-align: center;
+}
+
+#save-weather, #historical-data {
+    display: inline-block;
+}
+
+#table-section {
+    padding: 20px;
+    margin: auto;
+    width: 40%;
+}
+
+#error {
+    display: none;
+}
+
+.input-group {
+    padding-bottom: 20px;
+}
+
+body {
+    background-image: url("/static/images/bg-image-4.jpg");
+    background-size: cover; 
+}
+
+h1 {
+    color: white;
+}
+
+#sun-favicon {
+    filter: invert(100%) sepia(2%) saturate(240%) hue-rotate(203deg) brightness(116%) contrast(100%);
+}
+
+/* img {
+    class: "mx-auto d-block";
+} */
+

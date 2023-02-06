@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+<link rel="stylesheet" href="{% static 'boot/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'boot/css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+<title>Weather App</title>
+<link id="sun-favicon"rel="icon" type="image/x-icon" href="{% static 'images/sun.png' %}">
+
+</head>
+    <body>
+        {% csrf_token %}
+        <div class="container">
+            <div class="row">
+                <div class="col-8 mx-auto flex-column justify-content-center">
+                    <div>
+                        <div id="error"class="alert alert-warning alert-dismissible fade show" role="alert"></div>
+                        <h1 class="display-2 text-center"> Plan your day with your local weather</h1>
+                        <div class="input-group d-flex align-items-center justify-content-center py-4">
+                            <input type="search" class="form-control rounded" style="max-width: 540px" id="user-input"placeholder="Please enter your location..." aria-label="Search" aria-describedby="search-addon"/>
+                            <button type="button" class="btn btn-dark" id='get-weather'>Get weather</button>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <div class="card mb-3" style="max-width: 540px;">
+                                    <div class="card-body">
+                                        <div class="text-center pb-2">
+                                            <h5 class="card-title my-0">Weather conditions</h5>
+                                            <p class="card-text"><small class="text-muted">{{date_today}}</small></p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col d-flex align-items-center justify-content-center">
+                                                <div class="weather-icon"><img class="mx-auto d-block" src="/static/icons/unknown.png"/></div>
+                                            </div>
+                                            <div class="col-md-auto">
+                                                <p class="card-text">   
+                                                    <span>Closest address match: </span>
+                                                    <span id='closest-matching-address'></span><br>
+                                                    <span>Description: </span>
+                                                    <span id='description'></span><br>
+                                                    <span>Actual Temperature: </span>
+                                                    <span id='temperature'> </span>
+                                                    <span id='temp-symbol'></span><br>
+                                                    <span>Feels like:</span>
+                                                    <span id='feels_like'></span>
+                                                    <span id='feels-symbol'></span><br>
+                                                </p>
+
+                                        <span id='error'></span>
+                                        
+                                        <div class="button-group" id="button-section">
+                                            <button type="button" class="btn btn-dark" id='save-weather'>Save weather</button>
+                                            <button type="button" class="btn btn-dark" id='historical-data'>Historical data</button>
+                                        </div>
+                                            
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+                                
+        
+                                <div class="table-section col-md-4">
+                                    <table class="table" id="historical-data-table">
+                                        <tr>
+                                            <th>Address</th>
+                                            <th>Description</th>
+                                            <th>Temperature</th>
+                                            <th>Feels like</th>
+                                            <th>Symbol</th>
+                                        </tr>
+                                        <tbody id='dynamic-info'></tbody>
+                                    </table>
+                                </div>
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 mx-auto justify-content-center">
+
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,8 @@
+# ignore the dynamically built static dirs
+static/
+
+# VS Code Config
+.vscode
+
+# identifier files
+*.Identifier
